@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:trans_trackid_example/gen/assets.gen.dart';
 import 'package:trans_trackid_example/models/device.dart';
 import 'package:trans_trackid_example/modules/location_devices/cubit/location_devices_cubit.dart';
 

@@ -11,7 +11,6 @@ import 'package:trans_trackid_example/modules/splash/cubit/splash_cubit.dart';
 import 'package:trans_trackid_example/repositories/devices_repository.dart';
 import 'package:trans_trackid_example/repositories/main_repository.dart';
 import 'package:trans_trackid_example/utils/enum.dart';
-import 'package:trans_trackid_example/utils/get_it.dart';
 
 import 'splash_cubit_test.mocks.dart';
 

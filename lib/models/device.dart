@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'device.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Device {
   Device(
     this.id,
@@ -18,8 +18,8 @@ class Device {
   /// Converter from response map data to model
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
 
-  /// Converter from model to map data for request
-  Map<String, dynamic> toJson() => _$DeviceToJson(this);
+  // /// Converter from model to map data for request
+  // Map<String, dynamic> toJson() => _$DeviceToJson(this);
 
   final String id;
 

@@ -7,13 +7,19 @@ import 'package:trans_trackid_example/utils/get_it.dart';
 /// - Initial Dependencies Injection
 /// - Setup DIO http client
 class MainRepository {
+  /// Called on splash screen
+  MainRepository(this.lang, this.dio);
+
+  final String lang;
+  final Dio dio;
+
   /// Called when the app is launched on splash screen
   void initialize() {
-    final dio = _setupDio('id');
-    initializeDI(dio);
+    final setupDio = _setupDio();
+    initializeDI(setupDio);
   }
 
-  Dio _setupDio(String lang) {
+  Dio _setupDio() {
     final headers = {
       'accept': 'application/json',
       'X-Localization': lang,
@@ -26,8 +32,7 @@ class MainRepository {
       headers: headers,
     );
 
-    final dio = Dio(options);
-
+    dio.options = options;
     dio.interceptors.add(LogInterceptor(responseBody: true));
 
     return dio;

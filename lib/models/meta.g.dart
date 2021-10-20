@@ -7,11 +7,6 @@ part of 'meta.dart';
 // **************************************************************************
 
 Meta _$MetaFromJson(Map<String, dynamic> json) => Meta(
-      json['status'] as int,
-      json['success'] as bool,
+      json['status'] as bool,
+      json['message'] as String,
     );
-
-Map<String, dynamic> _$MetaToJson(Meta instance) => <String, dynamic>{
-      'status': instance.status,
-      'success': instance.success,
-    };

@@ -20,7 +20,7 @@ const mockedResponseData = '''
       "created_at": "2021-05-15T00:33:43.715Z",
       "updated_at": "2021-08-26T17:11:03.961Z",
       "id": "2"
-    },
+    }
   ]
 }
 ''';

@@ -14,12 +14,3 @@ Device _$DeviceFromJson(Map<String, dynamic> json) => Device(
       json['longitude'] as String,
       json['created_at'] as String,
     );
-
-Map<String, dynamic> _$DeviceToJson(Device instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'avatar': instance.avatar,
-      'latitude': instance.latitude,
-      'longitude': instance.longitude,
-      'created_at': instance.createdAt,
-    };

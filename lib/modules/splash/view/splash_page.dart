@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,7 +16,8 @@ class SplashPage extends StatelessWidget {
       body: Center(
         child: BlocProvider(
           create: (context) =>
-              SplashCubit(MainRepository(), DevicesRepository())..initialize(),
+              SplashCubit(MainRepository('id', Dio()), DevicesRepository())
+                ..initialize(),
           child: const _SplashBody(),
         ),
       ),
