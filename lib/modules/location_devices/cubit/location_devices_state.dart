@@ -11,7 +11,7 @@ class LocationDevicesSuccess extends LocationDevicesState {
   LocationDevicesSuccess(this.cameraPosition, this.devices, this.imageData);
   final CameraPosition cameraPosition;
   final List<Device> devices;
-  final ByteData imageData;
+  final ByteData? imageData;
 }
 
 class LocationDevicesFailure extends LocationDevicesState {

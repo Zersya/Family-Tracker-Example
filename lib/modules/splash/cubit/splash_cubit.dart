@@ -8,9 +8,10 @@ import 'package:trans_trackid_example/utils/enum.dart';
 part 'splash_state.dart';
 
 class SplashCubit extends Cubit<SplashState> {
-  SplashCubit(this.mainRepo) : super(SplashInitial());
+  SplashCubit(this.mainRepo, this.devicesRepo) : super(SplashInitial());
 
   final MainRepository mainRepo;
+  final DevicesRepository devicesRepo;
 
   Future<void> initialize() async {
     emit(SplashLoading());
@@ -19,10 +20,8 @@ class SplashCubit extends Cubit<SplashState> {
   }
 
   Future<void> getDevices() async {
-    final _devicesRepo = DevicesRepository();
-
     emit(SplashLoading());
-    final response = await _devicesRepo.getDevices();
+    final response = await devicesRepo.getDevices();
 
     if (response.status == ResponseStatus.success) {
       emit(SplashSuccess(response.data!));

@@ -29,9 +29,10 @@ class LocationDevicesPage extends StatelessWidget {
                       markerId: MarkerId(device.id),
                       position: LatLng(lat, lng),
                       infoWindow: InfoWindow(title: device.name),
-                      icon: BitmapDescriptor.fromBytes(
-                        state.imageData.buffer.asUint8List(),
-                      ),
+                      icon: state.imageData != null
+                          ? BitmapDescriptor.fromBytes(
+                              state.imageData!.buffer.asUint8List())
+                          : BitmapDescriptor.defaultMarker,
                       onTap: () {
                         showCupertinoModalBottomSheet<void>(
                           context: context,

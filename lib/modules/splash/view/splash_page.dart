@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:trans_trackid_example/modules/location_devices/view/location_devices_page.dart';
 import 'package:trans_trackid_example/modules/splash/cubit/splash_cubit.dart';
+import 'package:trans_trackid_example/repositories/devices_repository.dart';
 import 'package:trans_trackid_example/repositories/main_repository.dart';
 
 class SplashPage extends StatelessWidget {
@@ -13,7 +14,8 @@ class SplashPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: BlocProvider(
-          create: (context) => SplashCubit(MainRepository())..initialize(),
+          create: (context) =>
+              SplashCubit(MainRepository(), DevicesRepository())..initialize(),
           child: const _SplashBody(),
         ),
       ),

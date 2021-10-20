@@ -19,6 +19,16 @@ class LocationDevicesCubit extends Cubit<LocationDevicesState> {
   Future<void> onMapCreated() async {
     try {
       emit(LocationDevicesLoading());
+
+      if (devices.isEmpty) {
+        final cameraPos = CameraPosition(
+          target: LatLng(initialLat, initialLng),
+        );
+
+        emit(LocationDevicesSuccess(cameraPos, devices, null));
+        return;
+      }
+
       final lat = double.parse(devices.first.latitude);
       final lng = double.parse(devices.first.longitude);
       final cameraPos = CameraPosition(target: LatLng(lat, lng));
