@@ -34,7 +34,7 @@ class _SplashBody extends StatelessWidget {
       listener: (context, state) {
         if (state is SplashSuccess) {
           /// TODO: Create helper router to easy manage navigation
-          Navigator.of(context).push(CupertinoPageRoute<void>(
+          Navigator.of(context).pushReplacement(CupertinoPageRoute<void>(
             builder: (context) {
               return LocationDevicesPage(devices: state.devices);
             },
